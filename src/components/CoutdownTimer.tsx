@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { Timer } from "../interfaces/timer";
 import { getCoutdownTimer } from "../utils/get-coutdown-timer";
 import { motion } from "motion/react";
-import { translateLeftAnimation } from '../constants/animations';
+import { translateLeftAnimation } from "../constants/animations";
 
 const countdownBoxesClass =
-  "p-5 flex flex-col justify-center items-center text-nyanza-2 font-montserrat text-4xl h-36 aspect-square";
+  "md:p-5 flex flex-col justify-center items-center text-nyanza-2 font-montserrat md:text-4xl h-22 md:h-36 aspect-square";
 
 const coutdownBoxesTextClass = "text-sm";
 
-export const CoutdownTimer = () => {
+interface Props {
+  className?: string;
+}
+
+export const CoutdownTimer = ({ className }: Props) => {
   const [timer, setTimer] = useState<Timer>(getCoutdownTimer());
 
   useEffect(() => {
@@ -22,7 +26,11 @@ export const CoutdownTimer = () => {
   }, []);
   return (
     <>
-      <motion.span id="coutdown" className="flex mt-10" {...translateLeftAnimation}>
+      <motion.span
+        id="coutdown"
+        className={`${className} flex mt-10`}
+        {...translateLeftAnimation}
+      >
         <div className={`bg-olive-4 ${countdownBoxesClass}`}>
           {timer.days} <span className={coutdownBoxesTextClass}>Días</span>
         </div>

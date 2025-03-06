@@ -1,6 +1,6 @@
 export const BackgroundImage = () => {
   return (
-    <div className="fixed w-screen max-h-screen -z-50">
+    <div className="fixed w-screen h-screen md:max-h-screen -z-50">
       <img
         src="/pictures/horizontal1.jpeg"
         alt="principal-image"

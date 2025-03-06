@@ -3,8 +3,8 @@ import { translateLeftAnimation, translateRightAnimation } from "../constants/an
 
 export const BibleVerse = () => {
   return (
-    <div className="w-screen h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
-      <motion.h2 {...translateLeftAnimation} className="font-great-vibes text-7xl text-nyanza-2">Eclesiastés 4, 9-12</motion.h2>
+    <div className="w-screen max-md:h-screen md:h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
+      <motion.h2 {...translateLeftAnimation} className="font-great-vibes text-6xl md:text-7xl text-nyanza-2 text-center">Eclesiastés 4, 9-12</motion.h2>
       <motion.p {...translateRightAnimation} className="font-montserrat text-center w-[80%] text-nyanza-2 leading-7">
         Más valen dos que uno, pues mayor provecho obtienen de su trabajo. Y si
         uno de ellos cae, el otro lo levanta. ¡Pero ay del que cae estando solo,
