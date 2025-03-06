@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-montserrat: "Montserrat", "sans-serif";
+  --color-olive-1: #a3c468;
+  --color-olive-2: #8fac6a;
+  --color-olive-3: #7b9a5e;
+  --color-olive-4: #365010;
+  --color-nyanza-1: #f5f3f5;
+  --color-nyanza-2: #f7f6e8;
+  --color-nyanza-3: #e6f1d5;
+  --color-nyanza-4: #dbeecd;
+}
+
+html {
+  animation: fade-in 1.5s ease;
+}
+
+.fade-in {
+  animation: fade-in 1.5s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
