@@ -24,7 +24,7 @@ export const Button = ({
     <Component
       {...(Component === "a" ? { href } : { onClick: action })}
       target={targetBlank ? "_blank" : "_self"}
-      className="py-3 px-10 my-10 font-montserrat font-bold uppercase bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none block"
+      className="py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none block"
     >
       {text}
     </Component>
