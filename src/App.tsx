@@ -4,6 +4,7 @@ import { MusicButton } from "./components/MusicButton";
 import { BibleVerse } from "./sections/BibleVerse";
 import { Countdown } from "./sections/Countdown";
 import { Locations } from "./sections/Locations";
+import ButtonToTop from './components/ButtonToTop';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div id="elements">
         <MusicButton />
         <BackgroundImage />
+        <ButtonToTop/>
       </div>
       <div id="sections">
         <Hero />

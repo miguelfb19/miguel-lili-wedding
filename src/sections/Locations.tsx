@@ -29,7 +29,7 @@ export const Locations = () => {
   const { isMobile } = useIsMobileStore();
 
   return (
-    <section className="md:h-screen bg-olive-3 flex max-md:flex-col gap-5 justify-around items-center px-10 max-md:py-20">
+    <section className="flex max-md:flex-col gap-5 justify-around items-center px-10 py-20">
       {cardsInfo.map((card) => (
         <motion.div
           key={card.title}
