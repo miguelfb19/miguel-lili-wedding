@@ -7,7 +7,8 @@ import {
   translateRightAnimation,
 } from "../constants/animations";
 
-const imagesClass = "h-[15rem] md:h-[25rem] aspect-video object-cover m-auto rounded-tl-4xl rounded-br-4xl";
+const imagesClass =
+  "h-[15rem] md:h-[25rem] aspect-video object-cover m-auto rounded-tl-4xl rounded-br-4xl";
 
 export const CarouselSection = () => {
   const { isMobile } = useIsMobileStore();
@@ -27,6 +28,7 @@ export const CarouselSection = () => {
           {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
         >
           <Carousel arrows className="md:w-[50%] m-auto">
+            <img src="/pictures/horizontal1.jpeg" className={imagesClass} />
             <img src="/pictures/vertical1.jpeg" className={imagesClass} />
             <img src="/pictures/vertical2.jpeg" className={imagesClass} />
             <img src="/pictures/vertical3.jpeg" className={imagesClass} />
