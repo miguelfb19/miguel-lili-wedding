@@ -10,7 +10,7 @@ export const BibleVerse = () => {
   const { isMobile } = useIsMobileStore();
 
   return (
-    <section className="w-screen max-md:h-screen md:h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
+    <section className="max-md:h-screen md:h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
       <motion.h2
         {...!isMobile ? translateLeftAnimation : mobileTranslateAnimation}
         className="font-great-vibes text-6xl md:text-7xl text-nyanza-2 text-center"

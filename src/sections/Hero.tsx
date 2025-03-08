@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <section className="h-screen w-screen flex flex-col justify-center items-center">
+    <section className="h-screen flex flex-col justify-center items-center">
       <h1 className="text-center text-6xl md:text-8xl font-great-vibes text-nyanza-1">
         Miguel & Lili
       </h1>

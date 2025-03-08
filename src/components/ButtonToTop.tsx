@@ -34,7 +34,7 @@ function ButtonToTop() {
     <span
       className={`${
         showBtn ? "flex" : "hidden"
-      } fixed bottom-10 right-10 bg-nyanza-4 opacity-70 p-3 rounded-full cursor-pointer hover:opacity-100 transition-all z-20`}
+      } fixed bottom-5 right-5 bg-nyanza-4 opacity-70 p-3 rounded-full cursor-pointer hover:opacity-100 transition-all z-20`}
       onClick={scrollToTop}
     >
       <ChevronUp color="#7b9a5e" size={40} />

@@ -4,7 +4,8 @@ import { MusicButton } from "./components/MusicButton";
 import { BibleVerse } from "./sections/BibleVerse";
 import { Countdown } from "./sections/Countdown";
 import { Locations } from "./sections/Locations";
-import ButtonToTop from './components/ButtonToTop';
+import ButtonToTop from "./components/ButtonToTop";
+import { CarouselSection } from "./sections/CarouselSection";
 
 function App() {
   return (
@@ -12,13 +13,14 @@ function App() {
       <div id="elements">
         <MusicButton />
         <BackgroundImage />
-        <ButtonToTop/>
+        <ButtonToTop />
       </div>
       <div id="sections">
         <Hero />
         <BibleVerse />
         <Countdown />
         <Locations />
+        <CarouselSection />
       </div>
     </>
   );
