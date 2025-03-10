@@ -78,7 +78,7 @@ export const AttendForm = () => {
 
   const handleFinalAttend = (e: RadioChangeEvent) => {
     e.preventDefault();
-    const { value } = e.target;
+    // const { value } = e.target;
   };
   return (
     <>
