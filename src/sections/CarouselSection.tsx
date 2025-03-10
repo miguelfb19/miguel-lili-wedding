@@ -1,4 +1,4 @@
-import { Carousel, ConfigProvider } from "antd";
+import { Carousel } from "antd";
 import { motion } from "motion/react";
 import { useIsMobileStore } from "../store/is-mobile-store";
 import {
@@ -14,29 +14,19 @@ export const CarouselSection = () => {
   const { isMobile } = useIsMobileStore();
   return (
     <section className="bg-olive-3 px-5 py-50 md:p-15">
-      <ConfigProvider
-        theme={{
-          components: {
-            Carousel: {
-              arrowSize: 40,
-              dotHeight: 7,
-            },
-          },
-        }}
+      <motion.div
+        {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
       >
-        <motion.div
-          {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
-        >
-          <Carousel arrows className="md:w-[50%] m-auto">
-            <img src="/pictures/horizontal1.jpeg" className={imagesClass} />
-            <img src="/pictures/vertical1.jpeg" className={imagesClass} />
-            <img src="/pictures/vertical2.jpeg" className={imagesClass} />
-            <img src="/pictures/vertical3.jpeg" className={imagesClass} />
-            <img src="/pictures/vertical4.jpeg" className={imagesClass} />
-            <img src="/pictures/vertical5.jpeg" className={imagesClass} />
-          </Carousel>
-        </motion.div>
-      </ConfigProvider>
+        <Carousel arrows className="md:w-[50%] m-auto">
+          <img src="/pictures/horizontal1.jpeg" className={imagesClass} />
+          <img src="/pictures/vertical1.jpeg" className={imagesClass} />
+          <img src="/pictures/vertical2.jpeg" className={imagesClass} />
+          <img src="/pictures/vertical3.jpeg" className={imagesClass} />
+          <img src="/pictures/vertical4.jpeg" className={imagesClass} />
+          <img src="/pictures/vertical5.jpeg" className={imagesClass} />
+        </Carousel>
+      </motion.div>
+
       <motion.h2
         {...(isMobile ? mobileTranslateAnimation : translateRightAnimation)}
         className="font-great-vibes text-5xl md:text-7xl mt-10 text-nyanza-2 w-full text-center"

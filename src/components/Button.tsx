@@ -1,9 +1,12 @@
+import { FormEvent } from 'react';
 interface Props {
-  action?: () => void;
+  action?: (e:FormEvent) => void;
   text: string;
   as?: "a" | "button";
   href?: string;
   targetBlank?: boolean;
+  className?: string
+  id?: string
 }
 
 export const Button = ({
@@ -11,7 +14,9 @@ export const Button = ({
   text,
   as: Component = "button",
   href,
-  targetBlank
+  targetBlank,
+  id,
+  className
 }: Props) => {
   if (Component === "a" && !href) {
     console.warn("Warning: <a> elements should have an href attribute.");
@@ -24,7 +29,8 @@ export const Button = ({
     <Component
       {...(Component === "a" ? { href } : { onClick: action })}
       target={targetBlank ? "_blank" : "_self"}
-      className="py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none block"
+      className={`${className} py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none block`}
+      id={id}
     >
       {text}
     </Component>

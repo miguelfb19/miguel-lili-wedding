@@ -5,3 +5,8 @@ export const capitalizeWord = (word: string) => {
 export const capitalizeSentence = (sentence: string) => {
   return [capitalizeWord(sentence[0]), ...sentence.slice(1)].join("");
 };
+
+export const capitalizeEveryWords = (sentence: string) => {
+  return sentence.split(" ").map(capitalizeWord).join(" ");
+
+}

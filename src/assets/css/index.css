@@ -30,3 +30,7 @@ html {
     opacity: 1;
   }
 }
+
+.custom-input{
+  @apply w-full h-12 p-3 rounded-full outline-none border-2 border-olive-3 border-solid
+}
