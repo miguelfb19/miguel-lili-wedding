@@ -3,14 +3,16 @@ import Swal from "sweetalert2";
 type Icon = "success" | "error" | "warning" | "info" | "question";
 
 export const submitAlert = (
-  message: string,
+  title: string,
+  text = "",
   icon: Icon,
   timer = 3,
   width = "32em"
 ) => {
   Swal.fire({
     icon: icon,
-    title: message,
+    title: title,
+    text: text,
     width: width,
     showConfirmButton: false,
     showCloseButton: true,

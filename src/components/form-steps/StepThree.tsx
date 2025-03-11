@@ -33,9 +33,6 @@ export const StepThree = ({step, stepsClass, formState, setFormState}:Props) => 
         ) : (
           <div>
             <div className="text-center flex flex-col mt-5 gap-4">
-              <h3 className="font-great-vibes text-4xl">
-                Familia {capitalizeEveryWords(formState.id)}
-              </h3>
               <div>
                 <h4 className="font-bold font-great-vibes text-4xl">
                   Adultos:

@@ -21,6 +21,7 @@ export const StepOne = ({stepsClass, step, formState, setFormState}: Props) => {
           type="text"
           placeholder="Ingrese código aquí"
           className="custom-input"
+          value={formState.code ?? ""}
           onChange={(e) => setFormState({ ...formState, code: e.target.value })}
         />
       </div>
