@@ -3,64 +3,86 @@ import { Button } from "./Button";
 import { allGuests } from "../constants/guests";
 import { useFormSteps } from "../store/form-steps";
 import { Guest } from "../interfaces/guests";
-import { capitalizeEveryWords } from "../utils/capitalize";
-import { Radio, RadioChangeEvent } from "antd";
+import { FormState } from "../interfaces/attend-form";
+import { StepOne } from "./form-steps/StepOne";
+import { StepTwo } from "./form-steps/StepTwo";
+import { StepThree } from "./form-steps/StepThree";
+import { submitAlert } from "../utils/alert";
 
-type Attend = {
-  id: string;
-  adults: string[];
-  kids: string[];
-};
-
-const data = {
-  code: "",
+const initialData = {
+  code: null,
+  error: null,
+  nonAttendance: false,
   id: "",
   adults: [],
   kids: [],
+  message: "",
 };
 
 const stepsClass =
   "absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-full px-10 transition-all duration-900";
 
-const attend = {
-  id: "",
-  adults: [],
-  kids: [],
-};
-
 export const AttendForm = () => {
   const { steps, setFirst, setSecond, setThird } = useFormSteps();
+  const [formState, setFormState] = useState<FormState>(initialData);
   const [guests, setGuests] = useState<Guest>();
-  const [error, setError] = useState<string | null>(null);
-  const [formData, setFormData] = useState(data);
-  const [finalAttend, setFinalAttend] = useState<Attend>(attend);
 
   const onPressNext = (e: FormEvent) => {
     e.preventDefault();
-    setError(null);
+    setFormState({ ...formState, error: null });
     // STEP 1
     if (steps.first) {
-      if (formData.code === "") {
-        setError("Por favor ingrese un código");
+      if (!formState.code) {
+        setFormState({ ...formState, error: "Por favor ingrese un código" });
         return;
       }
+      //   Search code in guests list
       const thisGuest = allGuests.filter(
-        (guest) => guest.code === formData.code
+        (guest) => guest.code === formState.code
       )[0];
       if (!thisGuest) {
-        setError("Código no válido");
+        setFormState({ ...formState, error: "Código no válido" });
         return;
       }
-      // reset code input
+      setFormState({ ...formState, error: null, id: thisGuest.id });
+      // get guest info
       setGuests(thisGuest);
-      setFinalAttend({ ...finalAttend, id: thisGuest.id });
+      //   Change to second step
       setSecond();
     }
+    // STEP 2
     if (steps.second) {
-      // console.log(finalAttend);
-      setThird()
+      if (formState.adults.length === 0) {
+        if (formState.kids.length !== 0) {
+          setFormState({
+            ...formState,
+            error:
+              "Creo que te equivocaste, no creo que quieras mandar niños solos a la boda jeje 😅",
+          });
+          return;
+        }
+        setFormState({
+          ...formState,
+          nonAttendance: true,
+          error: null,
+        });
+      } else {
+        setFormState({
+          ...formState,
+          nonAttendance: false,
+          message: null,
+          error: null,
+        });
+      }
+      setThird();
     }
-    if(steps.third){
+    // STEP 3 and last
+    if (steps.third) {
+      alert(JSON.stringify(formState, null, 2));
+      submitAlert(
+        "Gracias por confirmar tu asistencia, nos veremos allá, Dios te bendiga 🙏",
+        "success"
+      );
     }
   };
 
@@ -72,84 +94,46 @@ export const AttendForm = () => {
     if (steps.third) {
       setSecond();
     }
-    setError(null);
+    setFormState({ ...formState, error: null });
     return;
   };
 
-  const handleFinalAttend = (e: RadioChangeEvent) => {
-    e.preventDefault();
-    // const { value } = e.target;
-  };
   return (
     <>
-      <form className="relative w-1/2 flex flex-col justify-between p-7 md:p-10 bg-nyanza-3 text-olive-3 rounded-tl-4xl rounded-br-4xl h-96 font-montserrat">
-        {error && (
-          <p className="absolute top-5 right-0 text-red-600 w-full text-center text-sm">
-            {error}
+      <form className="relative w-1/2 flex flex-col justify-between p-7 md:p-10 bg-nyanza-3 text-olive-3 rounded-tl-4xl rounded-br-4xl h-[70%] font-montserrat">
+        {formState.error && (
+          <p className="absolute top-5 right-[50%] translate-x-[50%] text-red-600 text-center text-sm w-[70%]">
+            {formState.error}
           </p>
         )}
 
-        <div
-          id="step-1"
-          className={`${stepsClass} ${steps.first ? "" : "opacity-0 scale-0"} `}
+        {/* STEP 1 */}
+        <StepOne
+          step={steps.first}
+          formState={formState}
+          setFormState={setFormState}
+          stepsClass={stepsClass}
+        />
+
+        {/* STEP 2 */}
+        <StepTwo
+          stepsClass={stepsClass}
+          guests={guests}
+          step={steps.second}
+          formState={formState}
+        />
+
+        {/* STEP 3 */}
+        <StepThree
+          step={steps.third}
+          stepsClass={stepsClass}
+          formState={formState}
+          setFormState={setFormState}
+        />
+        <span
+          id="buttons-form"
+          className="absolute bottom-10 right-[50%] translate-x-1/2 w-[80%] flex justify-between"
         >
-          <p className={`w-full text-center my-10`}>
-            Ingresa tu <strong>código</strong> de invitado para continuar
-          </p>
-          <input
-            type="text"
-            placeholder="Ingrese código aquí"
-            className="custom-input"
-            onChange={(e) => setFormData({ ...formData, code: e.target.value })}
-          />
-        </div>
-        <div
-          id="step-2"
-          className={`${stepsClass} ${
-            steps.second ? "" : "opacity-0 scale-0"
-          } `}
-        >
-          {guests?.adults.map((guest) => (
-            <span className="flex p-2 justify-between" key={guest}>
-              <p>{capitalizeEveryWords(guest)}</p>
-              <Radio.Group
-                block
-                options={[
-                  { label: "Si", value: guest },
-                  { label: "No", value: undefined },
-                ]}
-                optionType="button"
-                buttonStyle="solid"
-                onChange={handleFinalAttend}
-              />
-            </span>
-          ))}
-          {guests?.kids &&
-            guests?.kids.map((guest) => (
-              <span className="flex p-2 justify-between" key={guest}>
-                <p>{capitalizeEveryWords(guest)}</p>
-                <Radio.Group
-                  block
-                  options={[
-                    { label: "Si", value: guest },
-                    { label: "No", value: undefined },
-                  ]}
-                  optionType="button"
-                  buttonStyle="solid"
-                  onChange={handleFinalAttend}
-                />
-              </span>
-            ))}
-        </div>
-        <div
-          id="step-3"
-          className={`${stepsClass} ${
-            steps.third ? "" : "opacity-0 scale-0"
-          } `}
-        >
-            <p className="text-center text-xl font-bold">Confirmaremos la asistencia para:</p>
-        </div>
-        <span id="buttons-form" className="absolute bottom-10 right-[50%] translate-x-1/2 w-[80%] flex justify-between">
           <Button
             id="prev"
             as="button"
