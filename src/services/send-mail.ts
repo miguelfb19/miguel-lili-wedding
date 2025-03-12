@@ -2,9 +2,9 @@ import { FormState } from "../interfaces/attend-form";
 import emailjs from "@emailjs/browser";
 import { capitalizeEveryWords } from "../utils/capitalize";
 
-const serviceIdEmailjs = import.meta.env.SERVICE_ID_EMAILJS;
-const templateIdEmailjs = import.meta.env.TEMPLATE_ID_EMAILJS;
-const publicKeyEmailjs = import.meta.env.PUBLIC_KEY_EMAILJS;
+const serviceIdEmailjs = import.meta.env.VITE_REACT_APP_SERVICE_ID_EMAILJS;
+const templateIdEmailjs = import.meta.env.VITE_REACT_APP_TEMPLATE_ID_EMAILJS;
+const publicKeyEmailjs = import.meta.env.VITE_REACT_APP_PUBLIC_KEY_EMAILJS;
 
 export const sendConfirmationMail = async (formData: FormState) => {
   const { adults, kids, message, id, nonAttendance } = formData;

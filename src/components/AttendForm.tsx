@@ -42,7 +42,7 @@ export const AttendForm = () => {
       }
       //   Search code in guests list
       const thisGuest = allGuests.filter(
-        (guest) => guest.code === formState.code
+        (guest) => guest.code === formState.code?.toLocaleLowerCase().trim()
       )[0];
       if (!thisGuest) {
         setFormState({ ...formState, error: "Código no válido" });
