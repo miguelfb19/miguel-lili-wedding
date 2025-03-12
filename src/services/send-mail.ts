@@ -31,21 +31,29 @@ export const sendConfirmationMail = async (formData: FormState) => {
       return {
         ok: false,
         message:
-          "Error al enviar la confirmación, por favor comunicate con nosotros lo más pronto posible para corregir el error.",
+          "Error al enviar la confirmación 😰 por favor comunicate con nosotros lo más pronto posible para corregir el error.",
+      };
+    }
+
+    if (nonAttendance) {
+      return {
+        ok: true,
+        message:
+          "Lamentamos que no puedas acompañarnos 🙁 pero entendemos la situación. Dios te bendiga 🙏",
       };
     }
 
     return {
       ok: true,
       message:
-        "Gracias por confirmar tu asistencia, nos veremos allá, Dios te bendiga 🙏",
+        "Gracias por confirmar tu asistencia, nos veremos allá 🥳 Dios te bendiga 🙏",
     };
   } catch (error) {
     console.log(error);
     return {
       ok: false,
       message:
-        "Error al enviar la confirmación, por favor comunicate con nosotros lo más pronto posible para corregir el error.",
+        "Error al enviar la confirmación 😰 por favor comunicate con nosotros lo más pronto posible para corregir el error.",
     };
   }
 };

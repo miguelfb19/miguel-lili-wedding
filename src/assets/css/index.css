@@ -38,3 +38,7 @@ html {
 .custom-rounded{
   @apply rounded-tl-4xl rounded-br-4xl
 }
+
+.custom-font{
+  @apply font-montserrat
+}
