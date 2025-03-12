@@ -8,11 +8,12 @@ import ButtonToTop from "./components/ButtonToTop";
 import { CarouselSection } from "./sections/CarouselSection";
 import { AttendConfirm } from "./sections/AttendConfirm";
 import { ConfigProvider } from "antd";
+import { Footer } from "./sections/Footer";
 
 function App() {
   return (
     <>
-    {/* Provider to configurate antd */}
+      {/* Provider to configurate antd */}
       <ConfigProvider
         theme={{
           components: {
@@ -45,6 +46,7 @@ function App() {
           <Locations />
           <CarouselSection />
           <AttendConfirm />
+          <Footer />
         </div>
       </ConfigProvider>
     </>
