@@ -42,3 +42,7 @@ html {
 .custom-font{
   @apply font-montserrat
 }
+
+.custom-alert-close-btn{
+  @apply text-olive-3
+}

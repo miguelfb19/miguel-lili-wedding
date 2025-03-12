@@ -22,8 +22,8 @@ export const submitAlert = (
     background: "#f7f6e8",
     iconColor: "#7b9a5e",
     customClass: {
-      title: "text-olive-3 text-2xl font-bold font-montserrat",
-      closeButton: "text-olive-3 text-2xl font-bold",
+      title: "custom-font",
+      closeButton: ".custom-alert-close-btn",
       popup: 'custom-font',
     },
     didOpen: (toast) => {
