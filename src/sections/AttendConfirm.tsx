@@ -12,7 +12,7 @@ export const AttendConfirm = () => {
   return (
     <div className="h-screen flex flex-col md:gap-10 justify-center items-center">
       <motion.h2
-        className="font-great-vibes text-center text-6xl md:text-8xl text-nyanza-1"
+        className="font-great-vibes text-center text-6xl max-md:w-3/4 max-md:mb-5 md:text-8xl text-nyanza-1"
         {...(!isMobile ? translateLeftAnimation : mobileTranslateAnimation)}
       >
         Confirma tu asistencia

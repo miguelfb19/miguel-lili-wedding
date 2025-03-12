@@ -9,6 +9,8 @@ import { CarouselSection } from "./sections/CarouselSection";
 import { AttendConfirm } from "./sections/AttendConfirm";
 import { ConfigProvider } from "antd";
 import { Footer } from "./sections/Footer";
+// import { HomeBanner } from "./components/HomeBanner";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -34,20 +36,32 @@ function App() {
           },
         }}
       >
-        <div id="elements">
-          <MusicButton />
-          <BackgroundImage />
-          <ButtonToTop />
-        </div>
-        <div id="sections">
-          <Hero />
-          <BibleVerse />
-          <Countdown />
-          <Locations />
-          <CarouselSection />
-          <AttendConfirm />
-          <Footer />
-        </div>
+        <BrowserRouter>
+          <Routes>
+            {/* <Route path="/" element={<HomeBanner />} /> */}
+            <Route
+              path="/"
+              element={
+                <div className="fade-in">
+                  <div id="elements">
+                    <MusicButton />
+                    <BackgroundImage />
+                    <ButtonToTop />
+                  </div>
+                  <div id="sections">
+                    <Hero />
+                    <BibleVerse />
+                    <Countdown />
+                    <Locations />
+                    <CarouselSection />
+                    <AttendConfirm />
+                    <Footer />
+                  </div>
+                </div>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
       </ConfigProvider>
     </>
   );

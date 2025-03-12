@@ -1,11 +1,33 @@
 import { Music, Pause, Play } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const MusicButton = () => {
   const [isPlay, setIsPlay] = useState(false);
-  const [music] = useState(new Audio("/audio/dos-palomas.mp3"));
+  const [music, setMusic] = useState<HTMLAudioElement | null>(null);
+
+  // This effect allow auto play when user click anywhere on document, then remove the event listener to avoid errors
+  useEffect(() => {
+    const audio = new Audio("/audio/dos-palomas.mp3");
+    audio.loop = true; // Ensure it loops
+    setMusic(audio);
+
+    const playMusic = () => {
+      audio.play().catch((e) => console.log("Autoplay blocked:", e));
+      setIsPlay(true);
+
+      document.removeEventListener("click", playMusic);
+    };
+
+    document.addEventListener("click", playMusic);
+
+    return () => {
+      document.removeEventListener("click", playMusic);
+    };
+  }, []);
 
   const handleMusic = () => {
+    if (!music) return;
+
     if (isPlay) {
       music.pause();
       setIsPlay(false);
@@ -14,6 +36,7 @@ export const MusicButton = () => {
       setIsPlay(true);
     }
   };
+
   return (
     <button
       onClick={handleMusic}

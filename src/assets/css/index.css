@@ -14,10 +14,6 @@
   --color-nyanza-4: #dbeecd;
 }
 
-html {
-  animation: fade-in 1.5s ease;
-}
-
 .fade-in {
   animation: fade-in 1.5s ease;
 }
