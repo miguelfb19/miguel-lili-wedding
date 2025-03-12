@@ -7,6 +7,8 @@ import { FormState } from "../interfaces/attend-form";
 import { StepOne } from "./form-steps/StepOne";
 import { StepTwo } from "./form-steps/StepTwo";
 import { StepThree } from "./form-steps/StepThree";
+import { LoaderCircle } from "lucide-react";
+import { sendConfirmationMail } from "../services/send-mail";
 import { submitAlert } from "../utils/alert";
 
 const initialData = {
@@ -26,8 +28,9 @@ export const AttendForm = () => {
   const { steps, setFirst, setSecond, setThird } = useFormSteps();
   const [formState, setFormState] = useState<FormState>(initialData);
   const [guests, setGuests] = useState<Guest>();
+  const [loading, setLoading] = useState(false);
 
-  const onPressNext = (e: FormEvent) => {
+  const onPressNext = async (e: FormEvent) => {
     e.preventDefault();
     setFormState({ ...formState, error: null });
 
@@ -84,12 +87,17 @@ export const AttendForm = () => {
     }
     // STEP 3 and last
     if (steps.third) {
-      console.log({ formState });
-      submitAlert(
-        "Confimado",
-        "Gracias por confirmar tu asistencia, nos veremos allá, Dios te bendiga 🙏",
-        "success"
-      );
+      setLoading(true);
+
+      const { ok, message } = await sendConfirmationMail(formState);
+
+      setLoading(false);
+      if (!ok) {
+        submitAlert("Error", message, "error");
+        return;
+      }
+      submitAlert("Confirmado", message, "success");
+
       //   When form is submitted, go to first step and reset form
       setFirst();
       setFormState({ ...formState, code: null, adults: [], kids: [] });
@@ -106,6 +114,8 @@ export const AttendForm = () => {
         code: null,
         adults: [], // Reset adults correctly
         kids: [], // Reset kids array
+        message: "", // Reset message
+        nonAttendance: false,
         error: null, // Clear any errors
       }));
       setFirst();
@@ -117,11 +127,19 @@ export const AttendForm = () => {
 
   return (
     <>
-      <form className="relative w-[90%] md:w-1/2 flex flex-col justify-between p-7 md:p-10 bg-nyanza-3 text-olive-3 rounded-tl-4xl rounded-br-4xl h-[70%] font-montserrat">
+      <form className="w-full h-full">
+        {/* Error message */}
         {formState.error && (
           <p className="absolute top-5 right-[50%] translate-x-[50%] text-red-600 text-center text-xs w-[70%]">
             {formState.error}
           </p>
+        )}
+
+        {/* Loadings Spinner */}
+        {loading && (
+          <div className="absolute top-0 left-0 z-20 bg-nyanza-1/50 w-full h-full custom-rounded flex justify-center items-center">
+            <LoaderCircle className="z-30 animate-spin" size={70} />
+          </div>
         )}
 
         {/* STEP 1 */}

@@ -24,7 +24,7 @@ export const StepThree = ({step, stepsClass, formState, setFormState}:Props) => 
           <div className="flex flex-col gap-4 mt-5">
             <textarea
               placeholder="Escribe aquí"
-              className="custom-input !h-52 !rounded-tl-4xl !rounded-br-4xl !rounded-tr-none !rounded-bl-none"
+              className="custom-input !h-52 custom-rounded !rounded-tr-none !rounded-bl-none"
               onChange={(e) =>
                 setFormState({ ...formState, message: e.target.value })
               }

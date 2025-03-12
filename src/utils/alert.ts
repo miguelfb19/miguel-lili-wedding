@@ -6,7 +6,7 @@ export const submitAlert = (
   title: string,
   text = "",
   icon: Icon,
-  timer = 3,
+  timer = 5,
   width = "32em"
 ) => {
   Swal.fire({

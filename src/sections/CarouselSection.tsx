@@ -8,7 +8,7 @@ import {
 } from "../constants/animations";
 
 const imagesClass =
-  "h-[15rem] md:h-[25rem] aspect-video object-cover m-auto rounded-tl-4xl rounded-br-4xl";
+  "h-[15rem] md:h-[25rem] aspect-video object-cover m-auto custom-rounded";
 
 export const CarouselSection = () => {
   const { isMobile } = useIsMobileStore();
@@ -36,7 +36,7 @@ export const CarouselSection = () => {
 
       <motion.span
         {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
-        className="bg-nyanza-4 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center rounded-tl-4xl rounded-br-4xl font-montserrat mt-5"
+        className="bg-nyanza-4 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center custom-rounded font-montserrat mt-5"
       >
         <p>
           Código de vestimenta elegante, nos reservamos el color{" "}
