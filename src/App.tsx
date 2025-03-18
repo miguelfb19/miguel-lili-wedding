@@ -41,7 +41,7 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<HomeBanner />} /> */}
             <Route
-              path="/"
+              path="/main"
               element={
                 <div className="fade-in">
                   <div id="elements">
@@ -61,7 +61,7 @@ function App() {
                 </div>
               }
             />
-            <Route path="/inicio" element={<HomeBanner />} />
+            <Route path="/" element={<HomeBanner />} />
           </Routes>
         </BrowserRouter>
       </ConfigProvider>
