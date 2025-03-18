@@ -42,3 +42,21 @@
 .custom-alert-close-btn{
   @apply text-olive-3
 }
+
+.custom-btn{
+  @apply flex justify-center py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none
+}
+
+.triangle-up{
+  background-color: nyanza-1;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 60%, 0% 0%, 100% 0%);
+}
+
+@media screen and (max-width: 768px) {
+  .triangle-up {
+    clip-path: polygon(50% 50%, -50% 0%, 150% 0%);
+  }
+  
+}

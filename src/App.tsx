@@ -11,6 +11,7 @@ import { ConfigProvider } from "antd";
 import { Footer } from "./sections/Footer";
 // import { HomeBanner } from "./components/HomeBanner";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomeBanner } from "./components/HomeBanner";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
                 </div>
               }
             />
+            <Route path="/inicio" element={<HomeBanner />} />
           </Routes>
         </BrowserRouter>
       </ConfigProvider>
