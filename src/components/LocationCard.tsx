@@ -19,7 +19,7 @@ export const LocationCard = ({
 }: Props) => {
   return (
     <article className="bg-nyanza-4 custom-rounded p-10 pb-0 flex flex-col justify-center items-center">
-      <img src={image} alt={description} className="custom-rounded shadow-gray-400 shadow-lg"/>
+      <img src={image} alt={description} className="custom-rounded shadow-gray-400 shadow-lg aspect-video md:h-64"/>
       <h2 className="text-5xl font-great-vibes text-olive-3 mt-10 mb-5">{title}</h2>
       <p className="font-montserrat text-olive-2 text-center">{location}</p>
       <p className="font-montserrat text-olive-2 text-center">{time}</p>
