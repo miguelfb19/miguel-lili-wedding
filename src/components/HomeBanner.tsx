@@ -9,7 +9,7 @@ export const HomeBanner = () => {
         <h1 className="font-great-vibes text-7xl md:text-8xl w-screen">Invitación a nuestra boda</h1>
         <p className="font-montserrat text-xl md:text-2xl w-[80vw] md:w-[60vw] m-auto">Queremos que celebres con nosotros este momento especial y nos bendigas con tu presencia</p>
       </span>
-      <Link to="/" className="absolute top-[42%] md:top-1/2 right-1/2 translate-x-1/2 z-30 bg-[url('/sello.webp')] bg-cover bg-center h-24 w-24 md:h-32 md:w-32"></Link>
+      <Link to="/main" className="absolute top-[42%] md:top-1/2 right-1/2 translate-x-1/2 z-30 bg-[url('/sello.webp')] bg-cover bg-center h-24 w-24 md:h-32 md:w-32"></Link>
     </div>
   );
 };
