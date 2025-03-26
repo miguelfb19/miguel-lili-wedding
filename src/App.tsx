@@ -9,7 +9,6 @@ import { CarouselSection } from "./sections/CarouselSection";
 import { AttendConfirm } from "./sections/AttendConfirm";
 import { ConfigProvider } from "antd";
 import { Footer } from "./sections/Footer";
-// import { HomeBanner } from "./components/HomeBanner";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeBanner } from "./components/HomeBanner";
 
@@ -39,7 +38,6 @@ function App() {
       >
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={<HomeBanner />} /> */}
             <Route
               path="/main"
               element={
