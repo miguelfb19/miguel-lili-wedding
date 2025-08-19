@@ -13,9 +13,9 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-r02",
-    id: "robert",
-    adults: ["Robert"],
+    code: "ml-rp02",
+    id: "pellon",
+    adults: ["Robert Pellón"],
     kids: [],
   },
   {
@@ -26,8 +26,8 @@ export const allGuests: Guest[] = [
   },
   {
     code: "ml-mx04",
-    id: "mejia",
-    adults: ["Sebastian Mejía", "Laura"],
+    id: "mejia cardona",
+    adults: ["Sebastian Mejía", "Laura Vanessa Cardona"],
     kids: [],
   },
   {
@@ -328,6 +328,18 @@ export const allGuests: Guest[] = [
     code: "ml-z54",
     id: "zapata",
     adults: ["Natalia Zapata"],
+    kids: [],
+  },
+  {
+    code: "ml-rc55",
+    id: "ribadeneira chavez",
+    adults: ["Rodrigo Ribadeneira chavéz"],
+    kids: [],
+  },
+  {
+    code: "ml-bd56",
+    id: "bustamante dávila",
+    adults: ["Ándres Felipe Bustamante Dávila"],
     kids: [],
   },
 ];
