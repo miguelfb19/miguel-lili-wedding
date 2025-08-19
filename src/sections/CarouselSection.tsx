@@ -17,7 +17,7 @@ export const CarouselSection = () => {
       <motion.div
         {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
       >
-        <Carousel arrows className="md:w-[50%] m-auto">
+        <Carousel arrows className="md:w-[50%] m-auto" autoplay>
           <img src="/pictures/horizontal1.jpeg" className={imagesClass} />
           <img src="/pictures/vertical1.jpeg" className={imagesClass} />
           <img src="/pictures/vertical2.jpeg" className={imagesClass} />
@@ -39,8 +39,8 @@ export const CarouselSection = () => {
         className="bg-nyanza-4 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center custom-rounded font-montserrat mt-5"
       >
         <p>
-          Código de vestimenta elegante, nos reservamos el color{" "}
-          <strong className="text-red-700">rojo</strong>
+          Código de vestimenta formal, nos reservamos los colores{" "}
+          <strong>AZUL Y BLANCO</strong>
         </p>
       </motion.span>
     </section>

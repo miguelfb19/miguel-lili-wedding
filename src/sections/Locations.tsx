@@ -10,7 +10,7 @@ const cardsInfo = [
   {
     title: "Eucarístia",
     location: "Parroquía Los XII Apóstoles",
-    time: "2:00PM",
+    time: "2:30PM",
     description: "Cra 26 No 33b-15, Barrio Poblado II Etapa",
     link: "https://maps.app.goo.gl/VWGV87hHv8ZJgbfAA",
     image: "/pictures/parroquia12apostoles.webp",
@@ -18,7 +18,7 @@ const cardsInfo = [
   {
     title: "Recepción",
     location: "El Columpio Parrilla",
-    time: "4:30PM",
+    time: "5:00PM",
     description: "Cl. 8 # 9-60, Dosquebradas, Risaralda",
     link: "https://maps.app.goo.gl/wTfQVnRsPe6AgD9u9",
     image: "/pictures/columpio.webp",

@@ -26,7 +26,7 @@ export const Countdown = () => {
         id="date"
         className="font-montserrat font-thin text-2xl md:text-3xl text-olive-3"
       >
-        2 de Noviembre de 2025
+        2 de Noviembre de 2025 - 2:30PM
       </motion.span>
 
       <CoutdownTimer isMobile={isMobile} />
