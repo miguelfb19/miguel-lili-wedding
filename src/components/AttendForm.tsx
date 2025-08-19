@@ -51,7 +51,7 @@ export const AttendForm = () => {
       setFormState({ ...formState, error: null, id: thisGuest.id });
       // get guest info
       setGuests(thisGuest);
-      //   Change to second step
+      // Change to second step
       setSecond();
     }
     // STEP 2

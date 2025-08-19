@@ -43,15 +43,15 @@ export const StepTwo = ({ stepsClass, step, guests, formState }: Props) => {
         className={`${stepsClass} ${step ? "" : "opacity-0 scale-0"} `}
       >
         <h3 className="text-center text-xl font-bold my-7">
-          {formState.adults.length === 1
+          {guests?.adults && guests.adults.length > 1
             ? "¿Asistirán a la boda?"
             : "¿Asistirás a la boda?"}
         </h3>
-        {formState.id.includes(" ") && (
+        {guests?.id.includes(" ") ? (
           <h4 className="font-great-vibes text-4xl w-full text-center mb-7">
             Familia {capitalizeEveryWords(formState.id)}
           </h4>
-        )}
+        ) : null}
         {guests?.adults.map((guest) => (
           <span className="flex p-2 justify-between" key={guest}>
             <p>{capitalizeEveryWords(guest)}</p>
