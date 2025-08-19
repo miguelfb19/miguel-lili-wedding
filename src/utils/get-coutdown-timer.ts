@@ -2,7 +2,7 @@ import { diffMilliseconds } from "@formkit/tempo";
 
 export const getCoutdownTimer = () => {
   const now = new Date();
-  const weddingDate = new Date("2025-11-02T19:00:00");
+  const weddingDate = new Date("2025-11-02T19:30:00");
   const diff = diffMilliseconds(weddingDate, now);
 
   if (diff > 0) {

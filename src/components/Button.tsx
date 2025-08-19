@@ -1,9 +1,10 @@
 import { FormEvent } from 'react';
+
 interface Props {
   action?: (e:FormEvent) => void;
-  text: string;
+  text: string | React.ReactNode;
   as?: "a" | "button";
-  href?: string;
+  href?: string; 
   targetBlank?: boolean;
   className?: string
   id?: string

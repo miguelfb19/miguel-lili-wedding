@@ -2,7 +2,7 @@ export const BackgroundImage = () => {
   return (
     <div className="fixed w-screen h-screen md:max-h-screen -z-50">
       <img
-        src="/pictures/horizontal1.jpeg"
+        src="/pictures/portada.avif"
         alt="principal-image"
         className="w-full h-full object-cover"
       />

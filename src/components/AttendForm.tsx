@@ -7,7 +7,7 @@ import { FormState } from "../interfaces/attend-form";
 import { StepOne } from "./form-steps/StepOne";
 import { StepTwo } from "./form-steps/StepTwo";
 import { StepThree } from "./form-steps/StepThree";
-import { LoaderCircle } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, LoaderCircle } from "lucide-react";
 import { sendConfirmationMail } from "../services/send-mail";
 import { submitAlert } from "../utils/alert";
 
@@ -167,13 +167,13 @@ export const AttendForm = () => {
         />
         <span
           id="buttons-form"
-          className="absolute bottom-10 right-[50%] translate-x-1/2 md:w-[80%] flex md:justify-between justify-around"
+          className="absolute bottom-10 right-[50%] translate-x-1/2 w-full md:w-[80%] flex md:justify-between justify-around"
         >
           <Button
             id="prev"
             as="button"
-            text="Anterior"
-            className={`!my-0  max-md:w-[40%] ${
+            text={<ChevronLeft />}
+            className={`!my-0 !px-5 ${
               steps.first ? "opacity-0 pointer-events-none" : ""
             }`}
             action={onPressPrev}
@@ -181,8 +181,8 @@ export const AttendForm = () => {
           <Button
             id="next"
             as="button"
-            text={steps.third ? "Confirmar" : "Siguiente"}
-            className="!my-0 max-md:w-[40%]"
+            text={steps.third ? <Check /> : <ChevronRight />}
+            className="!my-0 !px-5"
             action={onPressNext}
           />
         </span>
