@@ -13,13 +13,13 @@ export const BibleVerse = () => {
     <section className="max-md:h-screen md:h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
       <motion.h2
         {...!isMobile ? translateLeftAnimation : mobileTranslateAnimation}
-        className="font-great-vibes text-6xl md:text-7xl text-nyanza-2 text-center"
+        className="font-great-vibes text-6xl md:text-7xl text-nyanza-1 text-center"
       >
         Eclesiastés 4, 9-12
       </motion.h2>
       <motion.p
         {...!isMobile ? translateRightAnimation : mobileTranslateAnimation}
-        className="font-montserrat text-center w-[80%] text-nyanza-2 leading-7"
+        className="font-montserrat text-center w-[80%] text-nyanza-1 leading-7"
       >
         Más valen dos que uno, pues mayor provecho obtienen de su trabajo. Y si
         uno de ellos cae, el otro lo levanta. ¡Pero ay del que cae estando solo,

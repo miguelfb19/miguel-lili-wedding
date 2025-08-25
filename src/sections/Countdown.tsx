@@ -13,7 +13,7 @@ export const Countdown = () => {
   const { isMobile } = useIsMobileStore();
 
   return (
-    <section className="bg-nyanza-4 h-screen flex flex-col gap-4 justify-center items-center">
+    <section className="bg-nyanza-2 h-screen flex flex-col gap-4 justify-center items-center">
       <motion.h2
         id="coutdown-date"
         {...(!isMobile ? translateLeftAnimation : mobileTranslateAnimation)}

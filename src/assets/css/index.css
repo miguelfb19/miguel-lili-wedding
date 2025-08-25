@@ -4,14 +4,14 @@
 @theme {
   --font-great-vibes: "Great Vibes", cursive;
   --font-montserrat: "Montserrat", "sans-serif";
-  --color-olive-1: #a3c468;
-  --color-olive-2: #8fac6a;
-  --color-olive-3: #7b9a5e;
-  --color-olive-4: #365010;
-  --color-nyanza-1: #f5f3f5;
-  --color-nyanza-2: #f7f6e8;
-  --color-nyanza-3: #e6f1d5;
-  --color-nyanza-4: #dbeecd;
+  --color-olive-1: #84B6F4;
+  --color-olive-2: #77A1FB;
+  --color-olive-3: #405EA1;
+  --color-olive-4: #172A50;
+  --color-nyanza-1: white;
+  --color-nyanza-2: #C4DAFA;
+  --color-nyanza-3: #AFC9FD;
+  --color-nyanza-4: #8CB0FF;
 }
 
 .fade-in {
@@ -44,7 +44,7 @@
 }
 
 .custom-btn{
-  @apply flex justify-center py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-2 cursor-pointer shadow-md shadow-gray-400 active:scale-95 transition-all active:shadow-none
+  @apply flex justify-center py-3 px-10 my-10 font-montserrat font-bold uppercase text-center bg-olive-3 rounded-full text-nyanza-1 cursor-pointer shadow-md shadow-olive-4 active:scale-95 transition-all active:shadow-none
 }
 
 .triangle-up{

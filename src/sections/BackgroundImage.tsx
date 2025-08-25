@@ -5,6 +5,7 @@ export const BackgroundImage = () => {
         src="/pictures/portada.avif"
         alt="principal-image"
         className="w-full h-full object-cover"
+        loading="eager"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>

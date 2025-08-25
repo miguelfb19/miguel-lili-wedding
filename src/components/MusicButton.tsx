@@ -23,7 +23,7 @@ export const MusicButton = () => {
   return (
     <button
       onClick={handleMusic}
-      className="fixed top-5 right-5 z-10 bg-nyanza-3 rounded-full aspect-square flex justify-center items-center cursor-pointer shadow-md shadow-gray-400 scale-3d p-1 active:scale-90 active:shadow-none transition-all text-olive-3"
+      className="fixed top-5 right-5 z-10 bg-nyanza-3 rounded-full aspect-square flex justify-center items-center cursor-pointer shadow-md shadow-olive-4 scale-3d p-1 active:scale-90 active:shadow-none transition-all text-olive-4"
     >
       <Music />
       {isPlay ? <Pause /> : <Play />}

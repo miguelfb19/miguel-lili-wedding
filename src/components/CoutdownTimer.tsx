@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { mobileTranslateAnimation, translateLeftAnimation } from "../constants/animations";
 
 const countdownBoxesClass =
-  "md:p-5 flex flex-col justify-center items-center text-nyanza-2 font-montserrat md:text-4xl h-22 md:h-36 aspect-square";
+  "md:p-5 flex flex-col justify-center items-center text-nyanza-1 font-montserrat md:text-4xl h-22 md:h-36 aspect-square";
 
 const coutdownBoxesTextClass = "text-sm";
 

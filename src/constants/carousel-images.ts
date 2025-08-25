@@ -1,0 +1,15 @@
+export const carouselImages = [
+  "/pictures/carousel/1.avif",
+  "/pictures/carousel/2.avif",
+  "/pictures/carousel/3.avif",
+  "/pictures/carousel/4.avif",
+  "/pictures/carousel/5.avif",
+  "/pictures/carousel/6.avif",
+  "/pictures/carousel/7.avif",
+  "/pictures/carousel/8.avif",
+  "/pictures/carousel/9.avif",
+  "/pictures/carousel/10.avif",
+  "/pictures/carousel/11.avif",
+  "/pictures/carousel/12.avif",
+  "/pictures/carousel/13.avif",
+];

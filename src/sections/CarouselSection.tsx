@@ -6,24 +6,29 @@ import {
   translateLeftAnimation,
   translateRightAnimation,
 } from "../constants/animations";
+import { carouselImages } from "../constants/carousel-images";
 
 const imagesClass =
-  "h-[15rem] md:h-[25rem] aspect-video object-cover m-auto custom-rounded";
+  "h-full w-full object-cover md:object-fill custom-rounded";
 
 export const CarouselSection = () => {
   const { isMobile } = useIsMobileStore();
   return (
-    <section className="bg-olive-3 px-5 py-50 md:p-15">
+    <section className="bg-olive-3 px-5 py-30 md:p-15">
       <motion.div
         {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
       >
-        <Carousel arrows className="md:w-[50%] m-auto" autoplay>
-          <img src="/pictures/horizontal1.jpeg" className={imagesClass} />
-          <img src="/pictures/vertical1.jpeg" className={imagesClass} />
-          <img src="/pictures/vertical2.jpeg" className={imagesClass} />
-          <img src="/pictures/vertical3.jpeg" className={imagesClass} />
-          <img src="/pictures/vertical4.jpeg" className={imagesClass} />
-          <img src="/pictures/vertical5.jpeg" className={imagesClass} />
+        <Carousel
+          arrows
+          className="m-auto w-[80dvw] md:h-[80dvh] xl:h-[95dvh]"
+          autoplay
+          autoplaySpeed={2500}
+        >
+          {carouselImages.map((src, index) => (
+            <div key={index} className="w-full md:h-[75dvh] xl:h-[90dvh] m-auto custom-rounded">
+              <img src={src} className={imagesClass} loading="lazy"/>
+            </div>
+          ))}
         </Carousel>
       </motion.div>
 
@@ -36,11 +41,14 @@ export const CarouselSection = () => {
 
       <motion.span
         {...(isMobile ? mobileTranslateAnimation : translateLeftAnimation)}
-        className="bg-nyanza-4 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center custom-rounded font-montserrat mt-5"
+        className="bg-nyanza-3 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center custom-rounded font-montserrat mt-5"
       >
-        <p>
+        <p className="text-olive-4">
           Código de vestimenta formal, nos reservamos los colores{" "}
-          <strong>AZUL Y BLANCO</strong>
+          <strong>
+            <span className="text-blue-500">AZUL</span> y{" "}
+            <span className="text-white">BLANCO</span>
+          </strong>
         </p>
       </motion.span>
     </section>
