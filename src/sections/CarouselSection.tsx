@@ -20,12 +20,12 @@ export const CarouselSection = () => {
       >
         <Carousel
           arrows
-          className="m-auto w-[80dvw] md:h-[80dvh] xl:h-[95dvh]"
+          className="m-auto w-[80dvw] xl:w-[75dvw] md:h-[40dvh] xl:h-[100dvh] custom-rounded"
           autoplay
           autoplaySpeed={2500}
         >
           {carouselImages.map((src, index) => (
-            <div key={index} className="w-full md:h-[75dvh] xl:h-[90dvh] m-auto custom-rounded">
+            <div key={index} className="w-full md:h-[40dvh] xl:h-[95dvh] m-auto custom-rounded">
               <img src={src} className={imagesClass} loading="lazy"/>
             </div>
           ))}

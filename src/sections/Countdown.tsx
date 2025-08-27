@@ -24,7 +24,7 @@ export const Countdown = () => {
       <motion.span
         {...(!isMobile ? translateRightAnimation : mobileTranslateAnimation)}
         id="date"
-        className="font-montserrat font-thin text-center text-2xl md:text-3xl text-olive-3"
+        className="font-montserrat text-center text-2xl md:text-3xl text-olive-3"
       >
         2 de Noviembre de 2025 - 2:30PM
       </motion.span>
