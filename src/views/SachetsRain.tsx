@@ -1,0 +1,44 @@
+import { Mail } from "lucide-react";
+import { useState } from "react";
+import { ModalSachetRain } from "../components/ModalSachetRain";
+
+export const SachetsRain = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <section className="bg-nyanza-3 flex flex-col py-20">
+        <h2 className="font-great-vibes text-center text-7xl text-olive-4 mx-32">
+          Lluvia de sobres
+        </h2>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="relative text-olive-4 w-52 m-auto flex items-center justify-center cursor-pointer animate-palpite"
+        >
+          <Mail size={150} strokeWidth={1} />
+          <div className="w-10 absolute top-[40%]">
+            <svg viewBox="0 0 16 16" fill="none">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  d="M1.24264 8.24264L8 15L14.7574 8.24264C15.553 7.44699 16 6.36786 16 5.24264V5.05234C16 2.8143 14.1857 1 11.9477 1C10.7166 1 9.55233 1.55959 8.78331 2.52086L8 3.5L7.21669 2.52086C6.44767 1.55959 5.28338 1 4.05234 1C1.8143 1 0 2.8143 0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z"
+                  fill="currentColor"
+                ></path>{" "}
+              </g>
+            </svg>
+          </div>
+        </button>
+      </section>
+      <ModalSachetRain
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
+    </>
+  );
+};

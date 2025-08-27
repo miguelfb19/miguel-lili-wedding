@@ -1,16 +1,17 @@
-import { Hero } from "./sections/Hero";
-import { BackgroundImage } from "./sections/BackgroundImage";
+import { Hero } from "./views/Hero";
+import { BackgroundImage } from "./views/BackgroundImage";
 import { MusicButton } from "./components/MusicButton";
-import { BibleVerse } from "./sections/BibleVerse";
-import { Countdown } from "./sections/Countdown";
-import { Locations } from "./sections/Locations";
+import { BibleVerse } from "./views/BibleVerse";
+import { Countdown } from "./views/Countdown";
+import { Locations } from "./views/Locations";
 import ButtonToTop from "./components/ButtonToTop";
-import { CarouselSection } from "./sections/CarouselSection";
-import { AttendConfirm } from "./sections/AttendConfirm";
+import { CarouselSection } from "./views/CarouselSection";
+import { AttendConfirm } from "./views/AttendConfirm";
 import { ConfigProvider } from "antd";
-import { Footer } from "./sections/Footer";
+import { Footer } from "./views/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeBanner } from "./components/HomeBanner";
+import { SachetsRain } from "./views/SachetsRain";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
               colorPrimaryActive: "#172A50",
               colorText: "#172A50",
             },
+            Modal:{
+              contentBg: "#C4DAFA",
+              footerBg: "#C4DAFA",
+            },
           },
         }}
       >
@@ -54,6 +59,7 @@ function App() {
                     <Countdown />
                     <Locations />
                     <CarouselSection />
+                    <SachetsRain />
                     <AttendConfirm />
                     <Footer />
                   </div>
