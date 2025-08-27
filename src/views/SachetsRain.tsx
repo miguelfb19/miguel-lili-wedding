@@ -8,7 +8,7 @@ export const SachetsRain = () => {
   return (
     <>
       <section className="bg-nyanza-3 flex flex-col py-20">
-        <h2 className="font-great-vibes text-center text-5xl md:text-7xl text-olive-4 mx-32">
+        <h2 className="font-great-vibes text-center text-5xl md:text-7xl text-olive-4 md:mx-32">
           Lluvia de sobres
         </h2>
         <button
@@ -18,11 +18,11 @@ export const SachetsRain = () => {
           <Mail size={150} strokeWidth={1} />
           <div className="w-10 absolute top-[40%]">
             <svg viewBox="0 0 16 16" fill="none">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
