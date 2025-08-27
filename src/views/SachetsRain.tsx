@@ -8,7 +8,7 @@ export const SachetsRain = () => {
   return (
     <>
       <section className="bg-nyanza-3 flex flex-col py-20">
-        <h2 className="font-great-vibes text-center text-7xl text-olive-4 mx-32">
+        <h2 className="font-great-vibes text-center text-5xl md:text-7xl text-olive-4 mx-32">
           Lluvia de sobres
         </h2>
         <button
