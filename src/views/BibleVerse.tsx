@@ -12,21 +12,23 @@ export const BibleVerse = () => {
   return (
     <section className="max-md:h-screen md:h-[50vh] bg-olive-3 flex flex-col justify-center items-center gap-5">
       <motion.h2
-        {...!isMobile ? translateLeftAnimation : mobileTranslateAnimation}
-        className="font-great-vibes text-6xl md:text-7xl text-nyanza-1 text-center"
+        {...(!isMobile ? translateLeftAnimation : mobileTranslateAnimation)}
+        className="font-amoresa text-5xl md:text-6xl text-nyanza-1 text-center"
       >
-        Eclesiastés 4, 9-12
+        Colosenses 3, 12-15
       </motion.h2>
       <motion.p
-        {...!isMobile ? translateRightAnimation : mobileTranslateAnimation}
+        {...(!isMobile ? translateRightAnimation : mobileTranslateAnimation)}
         className="font-montserrat text-center w-[80%] text-nyanza-1 leading-7"
       >
-        Más valen dos que uno, pues mayor provecho obtienen de su trabajo. Y si
-        uno de ellos cae, el otro lo levanta. ¡Pero ay del que cae estando solo,
-        pues no habrá quien lo levante! Además, si dos se acuestan juntos, uno a
-        otro se calientan; pero uno solo, ¿cómo va a entrar en calor? Uno solo
-        puede ser vencido, pero dos podrán resistir. Y además, la cuerda de tres
-        hilos no se rompe fácilmente.
+        Dios los ama a ustedes y los ha escogido para que pertenezcan al pueblo
+        santo. Revístanse de sentimientos de compasión, bondad, humildad,
+        mansedumbre y paciencia. Sopórtense unos a otros, y perdónense si alguno
+        tiene una queja contra otro. Así como el Señor los perdonó, perdonen
+        también ustedes.Sobre todo revístanse de amor, que es el lazo de la
+        perfecta unión. Y que la paz de Cristo reine en sus corazones, porque
+        con este propósito los llamó Dios a formar un solo cuerpo. Y sean
+        agradecidos.
       </motion.p>
     </section>
   );

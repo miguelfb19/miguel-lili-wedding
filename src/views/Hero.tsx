@@ -1,7 +1,7 @@
 export const Hero = () => {
   return (
     <section className="h-screen flex flex-col pt-36 2xl:pt-52 items-center">
-      <h1 className="text-center text-6xl md:text-8xl font-great-vibes text-nyanza-1">
+      <h1 className="text-center text-5xl md:text-7xl font-amoresa text-nyanza-1">
         Miguel & Lili
       </h1>
 

@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Amoresa';
+  src: url('/fonts/Amoresa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --font-great-vibes: "Great Vibes", cursive;
   --font-montserrat: "Montserrat", "sans-serif";
+  --font-amoresa: "Amoresa", "Great Vibes", "cursive";
   --color-olive-1: #84B6F4;
   --color-olive-2: #77A1FB;
   --color-olive-3: #405EA1;

@@ -34,9 +34,17 @@ export const ModalSachetRain = ({ isModalOpen, setIsModalOpen }: Props) => {
       </h3>
 
       {showAccountData ? (
-        <div className="flex flex-col text-center text-lg font-montserrat mt-12 mb-6 font-bold text-olive-4">
-          <p>Cuenta de ahorros Bancolombia</p>
-          <p>datos fake 31987432782</p>
+        <div className="flex flex-col text-center font-montserrat mt-3 font-bold text-olive-4">
+          <span>Cuenta de ahorros Bancolombia</span>
+          <div className="font-medium flex flex-col">
+            <span>No. 91283406127</span>
+            <span>Lili Karina López Mejía</span>
+            <span>C.C 1088032938</span>
+          </div>
+          <br />
+          <span>
+            Llaves: <span className="font-medium">@LLM032 o 1088032938</span>
+          </span>
         </div>
       ) : (
         <button
