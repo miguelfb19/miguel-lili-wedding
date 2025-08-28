@@ -25,10 +25,12 @@ export const BibleVerse = () => {
         santo. Revístanse de sentimientos de compasión, bondad, humildad,
         mansedumbre y paciencia. Sopórtense unos a otros, y perdónense si alguno
         tiene una queja contra otro. Así como el Señor los perdonó, perdonen
-        también ustedes.Sobre todo revístanse de amor, que es el lazo de la
-        perfecta unión. Y que la paz de Cristo reine en sus corazones, porque
-        con este propósito los llamó Dios a formar un solo cuerpo. Y sean
-        agradecidos.
+        también ustedes.{" "}
+        <strong>
+          Sobre todo revístanse de amor, que es el lazo de la perfecta unión.
+        </strong>{" "}
+        Y que la paz de Cristo reine en sus corazones, porque con este propósito
+        los llamó Dios a formar un solo cuerpo. Y sean agradecidos.
       </motion.p>
     </section>
   );
