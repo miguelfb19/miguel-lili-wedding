@@ -20,7 +20,7 @@ export const CarouselSection = () => {
       >
         <Carousel
           arrows
-          className="m-auto w-[80dvw] xl:w-[75dvw] md:h-[40dvh] xl:h-[100dvh] custom-rounded"
+          className="m-auto w-[80dvw] xl:w-[70dvw] md:h-[40dvh] xl:h-[100dvh] custom-rounded"
           autoplay
           autoplaySpeed={2500}
         >
