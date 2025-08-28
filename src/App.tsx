@@ -9,11 +9,13 @@ import { CarouselSection } from "./views/CarouselSection";
 import { AttendConfirm } from "./views/AttendConfirm";
 import { ConfigProvider } from "antd";
 import { Footer } from "./views/Footer";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeBanner } from "./components/HomeBanner";
 import { SachetsRain } from "./views/SachetsRain";
+import { useViewsStore } from "./store/views-store";
 
 function App() {
+  const { view } = useViewsStore();
+
   return (
     <>
       {/* Provider to configurate antd */}
@@ -35,40 +37,34 @@ function App() {
               colorPrimaryActive: "#172A50",
               colorText: "#172A50",
             },
-            Modal:{
+            Modal: {
               contentBg: "#C4DAFA",
               footerBg: "#C4DAFA",
             },
           },
         }}
       >
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/main"
-              element={
-                <div className="fade-in">
-                  <div id="elements">
-                    <MusicButton />
-                    <BackgroundImage />
-                    <ButtonToTop />
-                  </div>
-                  <div id="sections">
-                    <Hero />
-                    <BibleVerse />
-                    <Countdown />
-                    <Locations />
-                    <CarouselSection />
-                    <SachetsRain />
-                    <AttendConfirm />
-                    <Footer />
-                  </div>
-                </div>
-              }
-            />
-            <Route path="/" element={<HomeBanner />} />
-          </Routes>
-        </BrowserRouter>
+        {view == "main" ? (
+          <div className="fade-in">
+            <div id="elements">
+              <MusicButton />
+              <BackgroundImage />
+              <ButtonToTop />
+            </div>
+            <div id="sections">
+              <Hero />
+              <BibleVerse />
+              <Countdown />
+              <Locations />
+              <CarouselSection />
+              <SachetsRain />
+              <AttendConfirm />
+              <Footer />
+            </div>
+          </div>
+        ) : (
+          <HomeBanner />
+        )}
       </ConfigProvider>
     </>
   );
