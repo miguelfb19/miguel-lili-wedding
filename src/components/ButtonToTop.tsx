@@ -5,12 +5,12 @@ import { animateScroll as scroll } from "react-scroll";
 function ButtonToTop() {
   //Hacemos el scrollToTop con una funcion debido a que los parametros como 'duration'
   //no los agarra directamente en el JSX
-  let scrollToTop = () => {
+  const scrollToTop = () => {
     scroll.scrollToTop({ duration: 500 });
   };
   const [showBtn, setShowBtn] = useState(true);
 
-  let vh = window.innerHeight;
+  const vh = window.innerHeight;
 
   //Funcion para mostrar o quitar el boton de Scroll Top
   const handleButton = () => {
@@ -31,14 +31,14 @@ function ButtonToTop() {
   }, []);
 
   return (
-    <span
+    <button
       className={`${
         showBtn ? "flex" : "hidden"
       } fixed bottom-5 right-5 bg-nyanza-4 opacity-70 p-3 rounded-full cursor-pointer hover:opacity-100 transition-all z-20`}
       onClick={scrollToTop}
     >
       <ChevronUp color="#172A50" size={40} />
-    </span>
+    </button>
   );
 }
 
