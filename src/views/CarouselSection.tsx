@@ -25,8 +25,8 @@ export const CarouselSection = () => {
           autoplaySpeed={2500}
         >
           {carouselImages.map((src, index) => (
-            <div key={index} className="w-full md:h-[40dvh] xl:h-[95dvh] m-auto custom-rounded">
-              <img src={src} className={imagesClass} loading="lazy"/>
+            <div key={src} className="w-full md:h-[40dvh] xl:h-[95dvh] m-auto custom-rounded">
+              <img alt={`Slide ${index}`} src={src} className={imagesClass} loading="lazy"/>
             </div>
           ))}
         </Carousel>
