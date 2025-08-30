@@ -4,18 +4,19 @@ export const allGuests: Guest[] = [
   {
     code: "ml-mj01",
     id: "mejia jaramillo",
-    adults: [
-      "Nancy Mejía",
-      "Beatriz Mejía",
-      "Mariela Mejía",
-      "Margarita Mejía",
-    ],
+    adults: ["Nancy Mejía"],
     kids: [],
   },
   {
-    code: "ml-rp02",
+    code: "ml-mj57",
+    id: "mejia jaramillo",
+    adults: ["Beatriz Mejía", "Mariela Mejía"],
+    kids: [],
+  },
+  {
+    code: "ml-pm02",
     id: "pellon",
-    adults: ["Robert Pellón"],
+    adults: ["Robert Pellón", "Margarita Mejía"],
     kids: [],
   },
   {
@@ -25,7 +26,7 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-mx04",
+    code: "ml-mc04",
     id: "mejia cardona",
     adults: ["Sebastian Mejía", "Laura Vanessa Cardona"],
     kids: [],
@@ -49,9 +50,9 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-ox08",
+    code: "ml-om08",
     id: "osorio",
-    adults: ["Nick Osorio", "Juliana"],
+    adults: ["Nick Osorio", "Juliana del Mar"],
     kids: [],
   },
   {
@@ -88,6 +89,12 @@ export const allGuests: Guest[] = [
     code: "ml-f14",
     id: "florez",
     adults: ["Fernando Flórez", "Mateo Flórez"],
+    kids: [],
+  },
+  {
+    code: "ml-f58",
+    id: "florez",
+    adults: ["Mateo Flórez"],
     kids: [],
   },
   {
@@ -151,7 +158,7 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-gfgagsg25",
+    code: "ml-gr25",
     id: "gómez ramirez",
     adults: ["Fredy Gómez", "Ana Lucía Ramirez", "Sebastian Gómez"],
     kids: [],
@@ -253,6 +260,12 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
+    code: "ml-v59",
+    id: "valencia",
+    adults: ["Cristian Camilo Valencia"],
+    kids: [],
+  },
+  {
     code: "ml-co42",
     id: "cifuentes ortiz",
     adults: ["Jhon Keddin Cifuentes", "Katheryn Ortiz"],
@@ -273,7 +286,7 @@ export const allGuests: Guest[] = [
   {
     code: "ml-pp45",
     id: "pineda pérez",
-    adults: ["Hector Fabio Pineda", "Lady Dayan Pérez", "Emmanuel Pineda"],
+    adults: ["Hector Fabio Pineda", "Lady Pérez", "Emmanuel Pineda"],
     kids: [],
   },
   {
@@ -283,10 +296,10 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-vá47",
-    id: "valencia álvarez",
-    adults: ["Sergio Esteban Valencia", "Daniela Álvarez"],
-    kids: ["Alison Valencia Álvarez"],
+    code: "ml-va47",
+    id: "valencia alvarez",
+    adults: ["Sergio Esteban Valencia", "Daniela Alvarez"],
+    kids: ["Alison Valencia Alvarez"],
   },
   {
     code: "ml-j48",
@@ -305,12 +318,6 @@ export const allGuests: Guest[] = [
     id: "ortega restrepo",
     adults: ["Brandon Ortega", "Tatiana Restrepo"],
     kids: ["Alana Ortega Restrepo"],
-  },
-  {
-    code: "ml-vs51",
-    id: "valencia salgado",
-    adults: ["Orlando Valencia", "Doris Salgado"],
-    kids: [],
   },
   {
     code: "ml-sg52",
@@ -339,7 +346,7 @@ export const allGuests: Guest[] = [
   {
     code: "ml-bd56",
     id: "bustamante dávila",
-    adults: ["Ándres Felipe Bustamante Dávila"],
+    adults: ["Adrian Felipe Bustamante Dávila"],
     kids: [],
   },
 ];
