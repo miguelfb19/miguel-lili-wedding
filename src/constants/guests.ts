@@ -346,7 +346,7 @@ export const allGuests: Guest[] = [
   {
     code: "ml-bd56",
     id: "bustamante dávila",
-    adults: ["Adrian Felipe Bustamante Dávila"],
+    adults: ["Adrian Felipe Bustamante Dávila, Paula Sánchez"],
     kids: [],
   },
 ];
