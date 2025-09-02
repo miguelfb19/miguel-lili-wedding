@@ -56,7 +56,23 @@
 }
 
 .animate-palpite {
-  animation: palpite 2s ease infinite;
+  animation: palpite 1.5s ease infinite;
+}
+
+.animate-custom-pulse{
+  animation: custom-pulse 3s ease infinite;
+}
+
+@keyframes custom-pulse{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 @keyframes palpite {
@@ -64,7 +80,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);

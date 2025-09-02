@@ -36,7 +36,7 @@ export const CarouselSection = () => {
         {...(isMobile ? mobileTranslateAnimation : translateRightAnimation)}
         className="font-great-vibes text-5xl md:text-7xl mt-10 text-nyanza-2 w-full text-center"
       >
-        Codigo de vestimenta
+        Traje formal
       </motion.h2>
 
       <motion.span
@@ -44,11 +44,12 @@ export const CarouselSection = () => {
         className="bg-nyanza-3 h-32 md:w-3/5 m-auto flex justify-center items-center p-5 text-center custom-rounded font-montserrat mt-5"
       >
         <p className="text-olive-4">
-          Código de vestimenta formal, nos reservamos los colores{" "}
+          Los colores{" "}
           <strong>
             <span className="text-blue-500">AZUL</span> y{" "}
             <span className="text-white">BLANCO</span>
           </strong>
+          {" "}están reservados para los novios.
         </p>
       </motion.span>
     </section>

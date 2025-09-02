@@ -19,7 +19,7 @@ export const Countdown = () => {
         {...(!isMobile ? translateLeftAnimation : mobileTranslateAnimation)}
         className="font-great-vibes text-6xl md:text-7xl text-olive-4"
       >
-        Separa la fecha
+        Agenda la fecha
       </motion.h2>
       <motion.span
         {...(!isMobile ? translateRightAnimation : mobileTranslateAnimation)}
