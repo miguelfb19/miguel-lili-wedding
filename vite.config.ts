@@ -8,4 +8,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
+  assetsInclude: ['**/*.avif'], // Asegurar que Vite maneje archivos AVIF
 });
