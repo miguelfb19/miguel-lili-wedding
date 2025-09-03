@@ -1,8 +1,21 @@
 import { ArrowBigDown } from "lucide-react";
 import { useViewsStore } from "../store/views-store";
+import { useEffect } from "react";
 
 export const HomeBanner = () => {
   const { setView } = useViewsStore();
+
+  // Pre-cargar la imagen de fondo para la vista principal
+  useEffect(() => {
+    const preloadBackgroundImage = () => {
+      const img = new Image();
+      img.fetchPriority = "high";
+      img.src = "/pictures/portada.avif";
+    };
+    
+    preloadBackgroundImage();
+  }, []);
+
   return (
     <div className="h-screen overflow-hidden fade-in relative bg-nyanza-1 bg-[url('/pictures/sachet_sm.avif')] xl:bg-[url('/pictures/sachet_xl.avif')] bg-no-repeat bg-cover bg-center">
       <div className="text-nyanza-1 text-center m-auto max-md:mx-3 md:w-3/5 pt-12 xl:pt-32 flex flex-col gap-2 xl:gap-8">
