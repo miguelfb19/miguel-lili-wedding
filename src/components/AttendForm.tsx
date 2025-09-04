@@ -93,10 +93,10 @@ export const AttendForm = () => {
 
       setLoading(false);
       if (!ok) {
-        submitAlert("Error", message, "error");
+        submitAlert({ title: "Error", icon: "error", text: message });
         return;
       }
-      submitAlert("Confirmado", message, "success");
+      submitAlert({ title: "Confirmado", icon: "success", text: message });
 
       //   When form is submitted, go to first step and reset form
       setFirst();
@@ -126,67 +126,65 @@ export const AttendForm = () => {
   };
 
   return (
-    <>
-      <form className="w-full h-full">
-        {/* Error message */}
-        {formState.error && (
-          <p className="absolute top-5 right-[50%] translate-x-[50%] text-red-600 text-center text-xs w-[70%]">
-            {formState.error}
-          </p>
-        )}
+    <form className="w-full h-full">
+      {/* Error message */}
+      {formState.error && (
+        <p className="absolute top-5 right-[50%] translate-x-[50%] text-red-600 text-center text-xs w-[70%]">
+          {formState.error}
+        </p>
+      )}
 
-        {/* Loadings Spinner */}
-        {loading && (
-          <div className="absolute top-0 left-0 z-20 bg-nyanza-1/50 w-full h-full custom-rounded flex justify-center items-center">
-            <LoaderCircle className="z-30 animate-spin" size={70} />
-          </div>
-        )}
+      {/* Loadings Spinner */}
+      {loading && (
+        <div className="absolute top-0 left-0 z-20 bg-nyanza-1/50 w-full h-full custom-rounded flex justify-center items-center">
+          <LoaderCircle className="z-30 animate-spin" size={70} />
+        </div>
+      )}
 
-        {/* STEP 1 */}
-        <StepOne
-          step={steps.first}
-          formState={formState}
-          setFormState={setFormState}
-          stepsClass={stepsClass}
+      {/* STEP 1 */}
+      <StepOne
+        step={steps.first}
+        formState={formState}
+        setFormState={setFormState}
+        stepsClass={stepsClass}
+      />
+
+      {/* STEP 2 */}
+      <StepTwo
+        stepsClass={stepsClass}
+        guests={guests}
+        step={steps.second}
+        formState={formState}
+      />
+
+      {/* STEP 3 */}
+      <StepThree
+        step={steps.third}
+        stepsClass={stepsClass}
+        formState={formState}
+        setFormState={setFormState}
+      />
+      <span
+        id="buttons-form"
+        className="absolute bottom-10 right-[50%] translate-x-1/2 w-full md:w-[80%] flex md:justify-between justify-around"
+      >
+        <Button
+          id="prev"
+          as="button"
+          text={<ChevronLeft />}
+          className={`!my-0 !px-5 ${
+            steps.first ? "opacity-0 pointer-events-none" : ""
+          }`}
+          action={onPressPrev}
         />
-
-        {/* STEP 2 */}
-        <StepTwo
-          stepsClass={stepsClass}
-          guests={guests}
-          step={steps.second}
-          formState={formState}
+        <Button
+          id="next"
+          as="button"
+          text={steps.third ? <Check /> : <ChevronRight />}
+          className="!my-0 !px-5"
+          action={onPressNext}
         />
-
-        {/* STEP 3 */}
-        <StepThree
-          step={steps.third}
-          stepsClass={stepsClass}
-          formState={formState}
-          setFormState={setFormState}
-        />
-        <span
-          id="buttons-form"
-          className="absolute bottom-10 right-[50%] translate-x-1/2 w-full md:w-[80%] flex md:justify-between justify-around"
-        >
-          <Button
-            id="prev"
-            as="button"
-            text={<ChevronLeft />}
-            className={`!my-0 !px-5 ${
-              steps.first ? "opacity-0 pointer-events-none" : ""
-            }`}
-            action={onPressPrev}
-          />
-          <Button
-            id="next"
-            as="button"
-            text={steps.third ? <Check /> : <ChevronRight />}
-            className="!my-0 !px-5"
-            action={onPressNext}
-          />
-        </span>
-      </form>
-    </>
+      </span>
+    </form>
   );
 };

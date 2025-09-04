@@ -2,13 +2,21 @@ import Swal from "sweetalert2";
 
 type Icon = "success" | "error" | "warning" | "info" | "question";
 
-export const submitAlert = (
-  title: string,
-  icon: Icon,
-  text: string = "",
+interface AlertOptions {
+  title: string;
+  icon: Icon;
+  text?: string;
+  timer?: number;
+  width?: string;
+}
+
+export const submitAlert = ({
+  title,
+  icon,
+  text = "",
   timer = 5,
   width = "32em"
-) => {
+}: AlertOptions) => {
   Swal.fire({
     icon: icon,
     title: title,
