@@ -4,8 +4,8 @@ type Icon = "success" | "error" | "warning" | "info" | "question";
 
 export const submitAlert = (
   title: string,
-  text = "",
   icon: Icon,
+  text: string = "",
   timer = 5,
   width = "32em"
 ) => {
