@@ -18,9 +18,9 @@ export const submitAlert = (
     showCloseButton: true,
     timer: timer * 1000,
     timerProgressBar: true,
-    color: "#7b9a5e",
-    background: "#f7f6e8",
-    iconColor: "#7b9a5e",
+    color: "#172A50",
+    background: "#C4DAFA",
+    iconColor: "#172A50",
     customClass: {
       title: "custom-font",
       closeButton: ".custom-alert-close-btn",
