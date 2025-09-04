@@ -350,13 +350,13 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-vr57",
+    code: "ml-vr60",
     id: "vásquez ramírez",
     adults: ["María Rubiela Vásquez Ramírez"],
     kids: [],
   },
   {
-    code: "ml-fb58",
+    code: "ml-fb61",
     id: "fernández barco",
     adults: ["Mónica Barco", "David Fernández"],
     kids: [],
