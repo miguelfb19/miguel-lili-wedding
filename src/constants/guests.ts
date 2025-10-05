@@ -74,9 +74,9 @@ export const allGuests: Guest[] = [
     kids: [],
   },
   {
-    code: "ml-l12",
-    id: "lópez",
-    adults: ["Jhon Freddy López"],
+    code: "ml-dt12",
+    id: "duque torres",
+    adults: ["Jhon Freddy Duque", "Diana Torres"],
     kids: [],
   },
   {
