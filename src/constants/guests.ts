@@ -379,10 +379,16 @@ export const allGuests: Guest[] = [
     adults: ["Joel Antonio Henao", "Stella Osorio"],
     kids: [],
   },
-{
+  {
     code: "ml-r63",
     id: "rosero",
     adults: ["Adriana Rosero"],
+    kids: [],
+  },
+  {
+    code: "ml-om64",
+    id: "Osorio Marin",
+    adults: ["Isabella Osorio"],
     kids: [],
   },
 ];
